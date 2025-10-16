@@ -33,4 +33,13 @@ class EmployeeListView(View):
 
 class EmployeeUpdate(View):
 
+        def get(self, request):
+
+                emp_data = Employeecrm.objects.get(id = 1)
+
+                return render (request,"update_emp.html",{ " emp_data":  emp_data})
+
+
         
+
+
