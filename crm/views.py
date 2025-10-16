@@ -56,4 +56,11 @@ class EmployeeUpdate(View):
                 emp_data.save()
 
                 return render(request,"update_emp.html")
+        
+
+class DeleteEmployeeVIew(View):
+
+        def get(self,request):
+
+                
 
