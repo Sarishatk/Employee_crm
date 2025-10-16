@@ -37,9 +37,23 @@ class EmployeeUpdate(View):
 
                 emp_data = Employeecrm.objects.get(id = 1)
 
-                return render(request,"update_emp.html",{ " emp_data":  emp_data})
-
-
+                return render(request,"update_emp.html",{"emp_data": emp_data})
         
+        def post(self,request):
 
+                emp_data = Employeecrm.objects.get(id = 1)
+
+                print(request.POST)
+
+                emp_data.name = request.POST.get("username")
+
+                emp_data.role = request.POST.get("user_role")
+
+                emp_data.place = request.POST.get("user_place")
+
+                emp_data.salary = request.POST.get("user_salary")
+
+                emp_data.save()
+
+                return render(request,"update_emp.html")
 
