@@ -29,3 +29,8 @@ class EmployeeListView(View):
                 data = Employeecrm.objects.all()
 
                 return render(request,"employee_list.html",{"data":data})
+        
+
+class EmployeeUpdate(View):
+
+        
