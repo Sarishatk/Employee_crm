@@ -33,15 +33,20 @@ class EmployeeListView(View):
 
 class EmployeeUpdate(View):
 
-        def get(self, request):
+        def get(self, request,**kwargs):
 
-                emp_data = Employeecrm.objects.get(id = 1)
+                update_id = kwargs.get('pk')
+
+                emp_data = Employeecrm.objects.get(id = update_id )
 
                 return render(request,"update_emp.html",{"emp_data": emp_data})
         
-        def post(self,request):
+        def post(self,request,**kwargs):
+ 
+                update_id = kwargs.get('pk')
 
-                emp_data = Employeecrm.objects.get(id = 1)
+
+                emp_data = Employeecrm.objects.get(id = update_id)
 
                 print(request.POST)
 
@@ -60,13 +65,24 @@ class EmployeeUpdate(View):
 
 class DeleteEmployeeVIew(View):
 
-        def get(self,request):
+        def get(self,request,**kwargs):
 
-                emp_data = Employeecrm.objects.get(id = 1)
+                delete_id = kwargs.get('pk')
+
+                emp_data = Employeecrm.objects.get(id = delete_id )
 
                 emp_data.delete()
 
                 return render(request,"add_employee.html")
+        
+
+class EmployeeRetriev(View):
+
+        def get(self,request,**kwargs):
+
+                retriev_id = kwargs.get('pk')
+
+                emp_data = Employeecrm.objects.get(id =  retriev_id )
 
 
 
