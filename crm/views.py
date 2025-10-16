@@ -62,5 +62,13 @@ class DeleteEmployeeVIew(View):
 
         def get(self,request):
 
-                
+                emp_data = Employeecrm.objects.get(id = 1)
+
+                emp_data.delete()
+
+                return render(request,"add_employee.html")
+
+
+
+
 
