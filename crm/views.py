@@ -83,6 +83,7 @@ class EmployeeRetriev(View):
                 retriev_id = kwargs.get('pk')
 
                 emp_data = Employeecrm.objects.get(id =  retriev_id )
+                
 
 
 
