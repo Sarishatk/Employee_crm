@@ -16,12 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from crm.views import CreateEmployeeView,EmployeeListView,EmployeeUpdate,DeleteEmployeeVIew
+from crm.views import CreateEmployeeView,EmployeeListView,EmployeeUpdate,DeleteEmployeeVIew,EmployeeRetriev
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('crate_emp/',CreateEmployeeView.as_view()),
     path('employeelist/',EmployeeListView.as_view()),
     path('update_emp/<int:pk>',EmployeeUpdate.as_view()),
-    path('delete_emp/<int:pk>',DeleteEmployeeVIew.as_view())
+    path('delete_emp/<int:pk>',DeleteEmployeeVIew.as_view()),
+    path('retreive/<int:pk>',EmployeeRetriev.as_view()),
 ]
