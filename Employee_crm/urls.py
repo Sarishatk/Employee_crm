@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from crm.views import CreateEmployeeView,EmployeeListView,EmployeeUpdate,DeleteEmployeeVIew,EmployeeRetriev
+from crm.views import CreateEmployeeView,EmployeeListView,EmployeeUpdate,DeleteEmployeeVIew,EmployeeRetriev,userregisterview
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +25,5 @@ urlpatterns = [
     path('update_emp/<int:pk>',EmployeeUpdate.as_view()),
     path('delete_emp/<int:pk>',DeleteEmployeeVIew.as_view()),
     path('retreive/<int:pk>',EmployeeRetriev.as_view()),
+    path('form/',userregisterview.as_view()),
 ]
