@@ -84,6 +84,7 @@ class EmployeeRetriev(View):
 
                 emp_data = Employeecrm.objects.get(id =  retriev_id )
                 
+                return render(request,"emp_details.html",{"emp_data":emp_data})
 
 
 
